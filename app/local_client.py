@@ -1,6 +1,7 @@
 import docker
 from app.models import VMRequest
 
+
 class LocalProvider:
     def __init__(self):
         self.client = docker.from_env()
@@ -12,7 +13,7 @@ class LocalProvider:
             detach=True,
             tty=True,
             stdin_open=True,
-            labels={"project_id": request.project_id, "zone": request.zone}
+            labels={"project_id": request.project_id, "zone": request.zone},
         )
         return f"projects/{request.project_id}/zones/{request.zone}/instances/{request.vm_name}"
 

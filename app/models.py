@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class VMRequest(BaseModel):
     project_id: str
     zone: str
@@ -7,9 +8,11 @@ class VMRequest(BaseModel):
     image_family: str
     vm_name: str
 
+
 class VMResponse(BaseModel):
     status: str
     vm_id: str
+
 
 class VMStatus(BaseModel):
     vm_name: str

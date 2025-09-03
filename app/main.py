@@ -6,6 +6,7 @@ app = FastAPI(title="GCP VM API", version="1.0.0")
 
 provider = deps.get_provider()
 
+
 @app.post("/vms", response_model=VMResponse)
 def create_vm(request: VMRequest):
     try:
@@ -14,6 +15,7 @@ def create_vm(request: VMRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/vms/{vm_name}", response_model=VMStatus)
 def get_vm(vm_name: str, project_id: str, zone: str):
     try:
@@ -21,6 +23,7 @@ def get_vm(vm_name: str, project_id: str, zone: str):
         return {"vm_name": vm_name, "status": status}
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
+
 
 @app.delete("/vms/{vm_name}")
 def delete_vm(vm_name: str, project_id: str, zone: str):

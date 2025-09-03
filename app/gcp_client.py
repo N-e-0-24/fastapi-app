@@ -1,5 +1,6 @@
 from app.models import VMRequest
 
+
 class GCPProvider:
     def create_vm(self, request: VMRequest):
         raise NotImplementedError("GCP provider not implemented in LOCAL mode")
