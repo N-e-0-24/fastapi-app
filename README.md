@@ -212,6 +212,7 @@ curl -X DELETE "http://localhost:8000/vms/test-vm?project_id=local-project&zone=
 * Add support for **multiple VM images** mapping.
 * Support **VM metadata & networking simulation**.
 * Deploy to **Kubernetes**.
+* Author  : Ayush Singh
 
 ---
 
