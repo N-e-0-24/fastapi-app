@@ -4,7 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "app/**"
+      - "tests/**"
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/**"
   pull_request:
+    branches:
+      - main
 
 jobs:
   build:
