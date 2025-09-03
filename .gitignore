@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment variables
+*.env
+.env.*
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+
+# Coverage / test
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+*.tar
+.docker/
+docker-compose.override.yml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build / Dist
+dist/
+build/
+*.egg-info/
