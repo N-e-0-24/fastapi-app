@@ -7,7 +7,7 @@ class LocalProvider:
         self.client = docker.from_env()
 
     def create_vm(self, request: VMRequest):
-        container = self.client.containers.run(
+        self.client.containers.run(
             image="ubuntu:22.04",  # maps from image_family
             name=request.vm_name,
             detach=True,
@@ -15,7 +15,12 @@ class LocalProvider:
             stdin_open=True,
             labels={"project_id": request.project_id, "zone": request.zone},
         )
-        return f"projects/{request.project_id}/zones/{request.zone}/instances/{request.vm_name}"
+
+        return (
+            f"projects/{request.project_id}/zones/{request.zone}/instances/"
+            f"{request.vm_name}"
+        )
+
 
     def get_vm(self, vm_name: str, project_id: str, zone: str):
         try:
