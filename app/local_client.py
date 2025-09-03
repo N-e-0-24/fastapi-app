@@ -13,14 +13,16 @@ class LocalProvider:
             detach=True,
             tty=True,
             stdin_open=True,
-            labels={"project_id": request.project_id, "zone": request.zone},
+            labels={
+                "project_id": request.project_id,
+                "zone": request.zone,
+            },
         )
 
         return (
             f"projects/{request.project_id}/zones/{request.zone}/instances/"
             f"{request.vm_name}"
         )
-
 
     def get_vm(self, vm_name: str, project_id: str, zone: str):
         try:
