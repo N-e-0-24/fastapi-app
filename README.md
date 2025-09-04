@@ -48,8 +48,8 @@ Supports both:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/fastapi-gcp-vm-api.git
-cd fastapi-gcp-vm-api
+git clone https://github.com/N-e-0-24/fastapi-app.git
+cd fastapi-app
 ```
 
 ### 2. Create a virtual environment
