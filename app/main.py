@@ -32,3 +32,8 @@ def delete_vm(vm_name: str, project_id: str, zone: str):
         return {"status": "deleted", "vm_name": vm_name}
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
+    
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
